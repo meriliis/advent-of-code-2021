@@ -18,7 +18,7 @@ def print_answers(day: int, year: int, part: Optional[str]) -> None:
     print(f'-- 📅 {year} day {day} --')
 
     data = get_data(day=day, year=year)
-    module = str(import_module(f'solutions.day_{day}.solution'))
+    module = import_module(f'solutions.day_{day}.solution')
 
     if part is not None:
         print_part_answers(data, module, part)
