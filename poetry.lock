@@ -305,8 +305,8 @@ python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
 
 [metadata]
 lock-version = "1.1"
-python-versions = "^3.7"
-content-hash = "5123ecfbce9a2cd1e921b2e6213cb90e702c12a0cad14d3062af7a1c7d1ac0ca"
+python-versions = ">=3.7,<3.11"
+content-hash = "593f5d3ddef62792c9f68757008221f3edb566f21b967b2ae17d58397290a35c"
 
 [metadata.files]
 advent-of-code-data = [
