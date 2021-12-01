@@ -19,7 +19,7 @@ if __name__ == '__main__':
         print_answers(day=args.day, year=aoc_year, part=args.part)
     else:
         current_time = datetime.now()
-        for date in range(1, 32):
+        for date in range(1, 26):
             time = datetime(aoc_year, 12, date, 7)  # Puzzles open at 7AM
             if current_time >= time:
                 print_answers(day=time.day, year=2020)
