@@ -11,7 +11,7 @@ def read_moving_commands(data: str) -> List[Tuple[str, int]]:
     return moving_commands
 
 
-def execute_command_a(horizontal_position: int, depth: int, command: Tuple[str, int]) -> Tuple[int, int]:
+def execute_command_1(horizontal_position: int, depth: int, command: Tuple[str, int]) -> Tuple[int, int]:
     direction, amount = command
 
     if direction == 'forward':
@@ -24,14 +24,14 @@ def execute_command_a(horizontal_position: int, depth: int, command: Tuple[str, 
     return horizontal_position, depth
 
 
-def move_ship_a(horizontal_position: int, depth: int, commands: List[Tuple[str, int]]) -> Tuple[int, int]:
+def move_ship_1(horizontal_position: int, depth: int, commands: List[Tuple[str, int]]) -> Tuple[int, int]:
     for command in commands:
-        horizontal_position, depth = execute_command_a(horizontal_position, depth, command)
+        horizontal_position, depth = execute_command_1(horizontal_position, depth, command)
 
     return horizontal_position, depth
 
 
-def execute_command_b(horizontal_position: int, depth: int, aim: int, command: Tuple[str, int]) -> Tuple[int, int, int]:
+def execute_command_2(horizontal_position: int, depth: int, aim: int, command: Tuple[str, int]) -> Tuple[int, int, int]:
     direction, amount = command
 
     if direction == 'forward':
@@ -45,22 +45,22 @@ def execute_command_b(horizontal_position: int, depth: int, aim: int, command: T
     return horizontal_position, depth, aim
 
 
-def move_ship_b(horizontal_position: int, depth: int, aim: int, commands: List[Tuple[str, int]]) -> Tuple[int, int, int]:
+def move_ship_2(horizontal_position: int, depth: int, aim: int, commands: List[Tuple[str, int]]) -> Tuple[int, int, int]:
     for command in commands:
-        horizontal_position, depth, aim = execute_command_b(horizontal_position, depth, aim, command)
+        horizontal_position, depth, aim = execute_command_2(horizontal_position, depth, aim, command)
 
     return horizontal_position, depth, aim
 
 
-def get_part_a_answer(data: str) -> int:
+def get_part_1_answer(data: str) -> int:
     moving_commands = read_moving_commands(data)
-    horizontal_position, depth = move_ship_a(horizontal_position=0, depth=0, commands=moving_commands)
+    horizontal_position, depth = move_ship_1(horizontal_position=0, depth=0, commands=moving_commands)
 
     return horizontal_position * depth
 
 
-def get_part_b_answer(data: str) -> int:
+def get_part_2_answer(data: str) -> int:
     moving_commands = read_moving_commands(data)
-    horizontal_position, depth, _ = move_ship_b(horizontal_position=0, depth=0, aim=0, commands=moving_commands)
+    horizontal_position, depth, _ = move_ship_2(horizontal_position=0, depth=0, aim=0, commands=moving_commands)
 
     return horizontal_position * depth

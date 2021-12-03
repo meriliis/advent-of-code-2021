@@ -58,7 +58,7 @@ def get_co2_scrubber_rating(diagnostic_report: np.array) -> int:
     return co2_scrubber_rating
 
 
-def get_part_a_answer(data: str) -> int:
+def get_part_1_answer(data: str) -> int:
     diagnostic_report = read_diagnostic_report(data)
     gamma_rate = get_gamma_rate(diagnostic_report)
     epsilon_rate = get_epsilon_rate(diagnostic_report)
@@ -67,7 +67,7 @@ def get_part_a_answer(data: str) -> int:
     return power_consumption
 
 
-def get_part_b_answer(data: str) -> int:
+def get_part_2_answer(data: str) -> int:
     diagnostic_report = read_diagnostic_report(data)
     oxygen_generator_rating = get_oxygen_generator_rating(diagnostic_report)
     co2_scrubber_rating = get_co2_scrubber_rating(diagnostic_report)

@@ -5,8 +5,8 @@ from aocd import get_data
 from .timing import timeit
 
 
-def print_answers(day: int, year: int, part: Optional[str]) -> None:
-    def print_part_answers(data: str, module: str, part: str) -> None:
+def print_answers(day: int, year: int, part: Optional[int]) -> None:
+    def print_part_answers(data: str, module: str, part: int) -> None:
         part_fun = getattr(module, f'get_part_{part}_answer', None)
         if part_fun:
             answer, time = timeit(part_fun)(data)
@@ -24,5 +24,5 @@ def print_answers(day: int, year: int, part: Optional[str]) -> None:
         print_part_answers(data, module, part)
 
     else:
-        print_part_answers(data, module, 'a')
-        print_part_answers(data, module, 'b')
+        print_part_answers(data, module, 1)
+        print_part_answers(data, module, 2)

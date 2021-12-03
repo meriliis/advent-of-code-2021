@@ -18,14 +18,14 @@ def get_rolling_sum(arr: List[int], window_size: int) -> List[int]:
     return rolling_sum
 
 
-def get_part_a_answer(data: str) -> int:
+def get_part_1_answer(data: str) -> int:
     sonar_sweep_report = [int(x) for x in data.split('\n')]
     increase_count = get_increase_count(sonar_sweep_report)
 
     return increase_count
 
 
-def get_part_b_answer(data: str) -> int:
+def get_part_2_answer(data: str) -> int:
     sonar_sweep_report = [int(x) for x in data.split('\n')]
     sonar_sweep_report_rolling_sum = get_rolling_sum(sonar_sweep_report, window_size=3)
     increase_count = get_increase_count(sonar_sweep_report_rolling_sum)
